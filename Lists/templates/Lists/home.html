@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1> Listificationizer</h1>
+
+<div>
+    <div>
+        {% for list in lists %}
+            {% if list.host == user %}
+                <div>
+                    <h5>
+                        <a href="{% url 'list' list.id %}">{{list.name}}</a>
+                        <form action = "{% url 'list_delete' list.id %}" method = "post">
+                            {% csrf_token %} 
+                            <input type="submit" value ="Delete List"></form>
+                    </h5>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <hr>
+    <h3>
+        Create New List
+    </h3>
+    <div>
+        {% if user.is_authenticated %}
+        <form method = "post">
+            {{form.as_p}}
+            {% csrf_token %} 
+                <input type="submit" value ="Submit"></form>
+        {%endif%}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1> {{list.name}} </h1>
+
+<form method = "post">
+{{form.as_p}}
+{% csrf_token %} 
+    <input type="submit" value ="Submit"></form>
+</form>
+<hr>
+<div class="container">
+{% for item in list_items %}
+
+    <div class="row">
+        <div class="col-sm-6">
+            {{item.body}}<form action = "{% url 'item_delete' item.id %}" method = "post">{% csrf_token %} <input type="submit" value ="Delete Item"></form>
+        </div>
+    </div>
+
+{%endfor%}
+</div>
+{% endblock %}

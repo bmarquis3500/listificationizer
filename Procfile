@@ -1,0 +1,1 @@
+web gunicorn ListApp.wsgi:application --log-file -
