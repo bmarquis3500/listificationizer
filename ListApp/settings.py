@@ -14,6 +14,15 @@ import os
 from pathlib import Path
 import django_heroku
 import dj_database_url
+import dotenv
+from django.core.management.commands.runserver import Command as runserver
+
+
+runserver.default_port = '8000' 
+
+dotenv_file = os.path.join(BASE_DIR,".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,10 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 
-import dotenv
-dotenv_file = os.path.join(BASE_DIR,".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
+
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
