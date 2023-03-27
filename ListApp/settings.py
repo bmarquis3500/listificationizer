@@ -16,6 +16,7 @@ from pathlib import Path
 from decouple import config
 
 SECRET_KEY = config("SECRET_KEY")
+postgresPassword = config("postgresPassword")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'STzCFwtePzoEoJGphdDC',
+        'PASSWORD': postgresPassword,
         'HOST': 'containers-us-west-205.railway.app',
         'PORT': '7432',
     }
