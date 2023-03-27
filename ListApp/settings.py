@@ -27,7 +27,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
+CSRF_TRUSTED_ORIGINS = ['https://web-gunicorn-listappwsgi-production.up.railway.app']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = os.getenv('SECRET_KEY')
