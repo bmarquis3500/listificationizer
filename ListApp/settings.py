@@ -86,12 +86,12 @@ WSGI_APPLICATION = 'ListApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ListApp',
+        'ENGINE': 'postgresql://postgres:STzCFwtePzoEoJGphdDC@containers-us-west-205.railway.app:7432/railway',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'DontForgetThis1!',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'STzCFwtePzoEoJGphdDC',
+        'HOST': 'containers-us-west-205.railway.app',
+        'PORT': '7432',
     }
 }
 
