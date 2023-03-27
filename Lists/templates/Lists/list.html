@@ -3,9 +3,9 @@
 {% block content %}
 <h1> {{list.name}} </h1>
 
-<form method = "post">
+<form method = "post">{% csrf_token %} 
 {{form.as_p}}
-{% csrf_token %} 
+
     <input type="submit" value ="Submit"></form>
 </form>
 <hr>
