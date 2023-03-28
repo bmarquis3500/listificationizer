@@ -15,7 +15,7 @@ class ListForm(ModelForm):
     class Meta:
         model = List
         fields = '__all__'
-        exclude = ['host']
+        exclude = ['host','description']
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField()
